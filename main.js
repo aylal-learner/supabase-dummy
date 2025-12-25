@@ -5,6 +5,10 @@ const supabase = createClient(
   import.meta.env.VITE_SUPABASE_ANON_KEY
 )
 
-const { data, error } = await supabase.auth.getSession()
-console.log('SESSION:', data)
-console.log('ERROR:', error)
+async function checkSupabase() {
+  const { data, error } = await supabase.auth.getSession()
+  console.log('SESSION:', data)
+  console.log('ERROR:', error)
+}
+
+checkSupabase()
